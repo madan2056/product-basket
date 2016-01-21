@@ -23,5 +23,6 @@
         "php": ">=5.4.0",
         "illuminate/console": "~5.0",
         "illuminate/support": "~5"
-    }
+    },
+	"minimum-stability": "dev"
 }
