@@ -36,7 +36,7 @@ providers' => [
 
 ## Creating Seed
 
-You will be able to create the seed file. Just call his command:
+You will be able to create the seed file. Just call this command:
 `php artisan neptrox-product-basket:migration`. This will call for create your seed file on *database/seeds/*, and runs the seed.
 
 
