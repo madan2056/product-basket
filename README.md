@@ -24,6 +24,8 @@ Run the Composer update comand
 composer update
 ```
 
+## Register Service Provider
+
 Register the provider in your config/app.php file :
 
 ```'
