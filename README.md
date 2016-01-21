@@ -5,15 +5,18 @@ Basket Type Product Package for Neptrox Shopping App Writen in Laravel 5.1
 Packagist name : neptrox/product-basket
 
 ## Installation
+
+```
+composer require neptrox/product-basket:dev-master
+```
+
+OR
+
 Update your composer.json
 ```
 "require": {
     "neptrox/product-basket": "dev-master"
 }
-```
-OR
-```
-composer require neptrox/product-basket:dev-master
 ```
 
 Run the Composer update comand
