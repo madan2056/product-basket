@@ -1,4 +1,4 @@
-<?php echo '<?php' ?>
+<?php echo '<?php \\n' ?>
 use Illuminate\Database\Seeder;
 
 class BasketTypeProductSeeder extends Seeder
