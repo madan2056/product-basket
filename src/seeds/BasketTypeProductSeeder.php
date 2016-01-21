@@ -1,4 +1,6 @@
-<?php echo '<?php ' ?>
+<?php
+namespace Neptrox\ProductBasket;
+
 use Illuminate\Database\Seeder;
 
 class BasketTypeProductSeeder extends Seeder
@@ -7,9 +9,9 @@ class BasketTypeProductSeeder extends Seeder
     {
         if (DB::table('{{ $table }}')->where('url', 'product-basket')->count() == 0) {
             DB::table('{{ $table }}')->insert([
-                    'name' => 'Product Basket',
-                    'url' => 'product-basket',
-                    'status' => 1,
+                'name' => 'Product Basket',
+                'url' => 'product-basket',
+                'status' => 1,
             ]);
         }
     }

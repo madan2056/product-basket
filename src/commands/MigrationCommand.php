@@ -34,6 +34,7 @@ class MigrationCommand extends Command
      */
     public function fire()
     {
+
         $productTypeTable = Config::get(config('neptrox.product-basket-config').'.product-types-table');
 
         $this->line('');
@@ -51,6 +52,7 @@ class MigrationCommand extends Command
             $this->info("Seeding in process...");
             if ($this->createSeed($productTypeTable)) {
                 $this->info("Seeder class successfully created!");
+                $this->call('dump-autoload');
                 $this->call('db:seed --class=BasketTypeProductSeeder');
                 $this->info("BasketTypeProductSeeder class successfully executed.");
             } else {
