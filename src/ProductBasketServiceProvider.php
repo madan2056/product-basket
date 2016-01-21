@@ -11,7 +11,7 @@ class ProductBasketServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->registerCommands();
+        // $this->registerCommands();
         $this->mergeConfig();
     }
 
@@ -115,7 +115,7 @@ class ProductBasketServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'command.neptrox-product-basket-migration',
+            /*'command.neptrox-product-basket-migration',*/
         ];
     }
 }

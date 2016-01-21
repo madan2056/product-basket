@@ -12,7 +12,8 @@
     "autoload": {
         "classmap": [
             "src/commands",
-            "src/Models"
+            "src/Models",
+            "src/seeds"
         ],
         "psr-4": {
             "Neptrox\\ProductBasket\\": "src/"
