@@ -28,7 +28,7 @@ Register the provider in your config/app.php file :
 
 ```'
 providers' => [
-    'Neptrox\ProductBasket\ProductBasketServiceProvider::class',
+    Neptrox\ProductBasket\ProductBasketServiceProvider::class,
 ]
 ```
 
