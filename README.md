@@ -10,11 +10,6 @@ Update your composer.json
 "require": {
     "neptrox/product-basket": "dev"
 }
-"autoload": {
-    "psr-4": {
-        "Neptrox\\ProductBasket\\": "packages/neptrox/product-basket/src/"
-    }
-}
 ```
 
 Run the Composer update comand
