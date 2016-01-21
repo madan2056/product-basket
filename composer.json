@@ -1,7 +1,7 @@
 {
     "name": "neptrox/product-basket",
     "description": "A basket type product having collection of products",
-    "type": "dev",
+    "type": "stable",
     "license": "MIT",
     "authors": [
         {
