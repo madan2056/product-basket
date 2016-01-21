@@ -18,7 +18,7 @@ class ProductBasketServiceProvider extends ServiceProvider
     public function boot()
     {
         // Register commands
-        $this->commands('command.neptrox-product-basket-migration');
+        // $this->commands('command.neptrox-product-basket-migration');
 
         // Merge Package Menu to Core Menu
         $configPath = __DIR__ . '/../config/neptrox-adminpanel-menu.php';
