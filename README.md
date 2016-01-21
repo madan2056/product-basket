@@ -8,8 +8,12 @@ Packagist name : neptrox/product-basket
 Update your composer.json
 ```
 "require": {
-    "neptrox/product-basket": "dev"
+    "neptrox/product-basket": "dev-master"
 }
+```
+OR
+```
+composer require neptrox/product-basket:dev-master
 ```
 
 Run the Composer update comand
