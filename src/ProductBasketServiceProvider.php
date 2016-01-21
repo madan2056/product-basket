@@ -11,15 +11,11 @@ class ProductBasketServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // $this->registerCommands();
         $this->mergeConfig();
     }
 
     public function boot()
     {
-        // Register commands
-        // $this->commands('command.neptrox-product-basket-migration');
-
         // Merge Package Menu to Core Menu
         $configPath = __DIR__ . '/../config/neptrox-adminpanel-menu.php';
         $this->mergeAdminMenu($configPath, 'neptrox-adminpanel-menu');
@@ -107,15 +103,5 @@ class ProductBasketServiceProvider extends ServiceProvider
         $this->app['config']->set($key, array_merge_recursive($config, require $path));
     }
 
-    /**
-     * Get the services provided.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return [
-            /*'command.neptrox-product-basket-migration',*/
-        ];
-    }
+
 }

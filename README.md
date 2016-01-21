@@ -34,13 +34,13 @@ providers' => [
 ]
 ```
 
-## Creating Seed
+## Run Seed
 
-You will be able to create the seed file. Just call this command:
-`php artisan neptrox-product-basket:migration`. This will call for create your seed file on *database/seeds/*, and runs the seed.
+``
+php artisan db:seed --class="Neptrox\ProductBasket\BasketTypeProductSeeder"
+``
 
-
-Publish configuration and resources to customize (optional):
+## Publish configuration and resources to customize (optional):
 
 ```
 php artisan vendor:publish --provider="Neptrox\ProductBasket\ProductBasketServiceProvider"
