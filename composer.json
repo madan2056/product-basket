@@ -1,0 +1,27 @@
+{
+    "name": "neptrox/product-basket",
+    "description": "A basket type product having collection of products",
+    "type": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Madan Adhikari",
+            "email": "madan2056@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/commands",
+            "src/Models"
+        ],
+        "psr-4": {
+            "Neptrox\\ProductBasket\\": "src/"
+        }
+    },
+    "min-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/console": "~5.0",
+        "illuminate/support": "~5"
+    }
+}
