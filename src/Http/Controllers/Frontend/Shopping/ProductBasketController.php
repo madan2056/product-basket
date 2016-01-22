@@ -36,7 +36,12 @@ class ProductBasketController extends ProductController
             ->where('slug', $url)
             ->first();
 
+        echo $url;
+        AppHelper::debug($product);
+
         $productData = ProductBasketData::where('product_id', $product->primary_key)->first();
+
+        AppHelper::debug($productData,1);
         $this->incrementProductViewCount($productData);
 
         $productList = $this->getProductsOnBasket($productData->custom_field);
