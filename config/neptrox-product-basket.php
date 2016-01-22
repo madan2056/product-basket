@@ -94,4 +94,17 @@ return [
         'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@setFeatured'
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Product Type Badge HTML
+    |--------------------------------------------------------------------------
+    |
+    */
+    'show-badge' => true,
+    'badge-html' => '<div class="new_label_product" data-toggle="tooltip" data-placement="top" title="Basket">
+                        <span class="product-label-new">
+                            <i class="fa fa-shopping-basket"></i>
+                        </span>
+                    </div>',
+
 ];

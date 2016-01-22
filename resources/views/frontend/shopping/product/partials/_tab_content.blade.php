@@ -1,3 +1,15 @@
+<style>
+    #tab-products{
+        border: 1px solid #ccc;
+        padding: 30px 20px;
+        line-height: 22px;
+        clear:both;
+        position: relative;
+        top: -1px;
+        z-index: 11;
+    }
+</style>
+
 <div class="tab-content tab-content-description">
 
     <ul id="tabs">

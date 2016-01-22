@@ -4,8 +4,8 @@
             {!! Form::hidden('selected_products', isset($data['basket_detail']) && array_key_exists('selected_products', $data['basket_detail'])?$data['basket_detail']['selected_products']:'', [ 'id' => 'selected_products']) !!}
             <div class="input-group select2-bootstrap-append">
                 {!! Form::select('product_search', [], null, ['class' => 'form-control', 'id' => 'product_search',  'style' => "width: 100%"]) !!}
-                <span class="input-group-btn">
-                        <button class="btn btn-default" id="btn-add-product" type="button">
+                <span class="input-group-btn" style="vertical-align: middle;">
+                        <button class="btn btn-primary btn-sm" id="btn-add-product" type="button">
                             <span class="fa fa-plus-square"></span>
                         </button>
                     </span>

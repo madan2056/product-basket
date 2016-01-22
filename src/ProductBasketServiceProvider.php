@@ -33,6 +33,7 @@ class ProductBasketServiceProvider extends ServiceProvider
         ]);
 
         $this->mergeProductPageRoute();
+        $this->mergeProductTypeBadge();
         $this->addConfigFileName();
 
         require __DIR__."/Http/routes.php";
@@ -43,17 +44,6 @@ class ProductBasketServiceProvider extends ServiceProvider
 
     }
 
-    /**
-     * Register the artisan commands.
-     *
-     * @return void
-     */
-    private function registerCommands()
-    {
-        $this->app->bindShared('command.neptrox-product-basket-migration', function ($app) {
-            return new MigrationCommand();
-        });
-    }
 
     /**
      * Make package config available to app config scope
@@ -92,6 +82,21 @@ class ProductBasketServiceProvider extends ServiceProvider
     }
 
     /**
+     * Merge Basket Type Product badge to core config
+     * "neptrox.product-type-badge"
+     */
+    private function mergeProductTypeBadge()
+    {
+        if (config($this->config_file_name.'.show-badge')) {
+            $key = 'neptrox.product-type-badge';
+            $config = $this->app['config']->get($key, []);
+            $this->app['config']->set($key, array_merge($config, [
+                'product-basket' => config($this->config_file_name.'.badge-html')
+            ]));
+        }
+    }
+
+    /**
      * Merge menu array to core Admin Menu array
      *
      * @param $path Config to be merged to
@@ -102,6 +107,5 @@ class ProductBasketServiceProvider extends ServiceProvider
         $config = $this->app['config']->get($key, []);
         $this->app['config']->set($key, array_merge_recursive($config, require $path));
     }
-
 
 }

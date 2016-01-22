@@ -33,7 +33,7 @@
                                 @include($product_view_path.'.partials._product_details')
 
                             </div>
-
+                            <div class="clearfix"></div>
                             <div class="col-sm-12">
 
                                 <div class="review-container">
