@@ -22,9 +22,9 @@
             $.ajax({
                 method: 'GET',
                 @if(!isset($data['primary_key']))
-                    url: '{{ url('admin/product/multiple-image-html') }}',
+                    url: '{{ route($base_route.'.multiple-image-html') }}',
                 @else
-                    url: '{{ url('admin/product/multiple-image-html') }}'+'?for=edit&key='+'{{ $data['primary_key'] }}',
+                    url: '{{ route($base_route.'.multiple-image-html') }}'+'?for=edit&key='+'{{ $data['primary_key'] }}',
                 @endif
                 error: function (request, status, error) {
                     //console.log(request.responseText);

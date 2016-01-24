@@ -143,7 +143,7 @@
 
         $.ajax({
             method: 'GET',
-            url: '{{ url('admin/product/multiple-image-row') }}' + '/' + row_index,
+            url: '{!! route($base_route.'.multiple-image-row') !!}'.replace('%7Bindex%7D', row_index),
             error: function (request, status, error) {
                 //console.log(request.responseText);
             },

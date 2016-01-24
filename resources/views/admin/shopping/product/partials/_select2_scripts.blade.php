@@ -7,7 +7,7 @@
         minimumInputLength: 3,
         ajax: {
             delay: 250,
-            url: '{{ route(config('neptrox-product-basket.admin:product-basket:product-search.route')) }}',
+            url: '{{ route($base_route.'.product-search') }}',
             dataType: 'json',
             data: function (params) {
                 var queryParameters = {
@@ -35,7 +35,7 @@
 
         // Parse table values based on selected text.
         $.ajax({
-            url: '{!! route(config('neptrox-product-basket.admin:product-basket:get-product-info.route')) !!}',
+            url: '{!! route($base_route.'.get-product-info') !!}',
             type: 'POST',
             data: {
                 _token: CSRF_TOKEN,

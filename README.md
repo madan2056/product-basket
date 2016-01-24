@@ -57,4 +57,5 @@ resources/lang/vendor/neptrox-product-basket
 ```
 
 ### Some information
-- This package is specific developed for Neptrox Shopping App
+- This package is specific developed for Neptrox Shopping App.
+- Please, load routes in Admin Section Route List Panel.

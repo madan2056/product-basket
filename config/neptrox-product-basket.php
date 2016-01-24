@@ -43,6 +43,26 @@ return [
         'route' => 'admin.product-basket.create',
         'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@create'
     ],
+    'admin:product-basket:attribute-value-html' => [
+        'url' => 'product-basket/attribute-value-html',
+        'route' => 'admin.product-basket.attribute-value-html',
+        'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@getAttributeValuesView'
+    ],
+    'admin:product-basket:attribute-value-row' => [
+        'url' => 'product-basket/attribute-value-row/{index}',
+        'route' => 'admin.product-basket.attribute-value-row',
+        'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@getAttributeValueRow'
+    ],
+    'admin:product-basket:multiple-image-html' => [
+        'url' => 'product-basket/multiple-image-html',
+        'route' => 'admin.product-basket.multiple-image-html',
+        'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@getMultipleImageView'
+    ],
+    'admin:product-basket:multiple-image-row' => [
+        'url' => 'product-basket/multiple-image-row/{index}',
+        'route' => 'admin.product-basket.multiple-image-row',
+        'controller' => 'Neptrox\ProductBasket\Http\Controllers\Admin\Shopping\ProductBasketController@getMultipleImageRow'
+    ],
     'admin:product-basket:store' => [
         'url' => 'product-basket/store',
         'route' => 'admin.product-basket.store',

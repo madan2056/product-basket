@@ -22,9 +22,9 @@
             $.ajax({
                 method: 'GET',
                 @if(!isset($data['primary_key']))
-                    url: '{{ url('admin/product/attribute-value-html') }}',
+                    url: '{{ route($base_route.'.attribute-value-html') }}',
                 @else
-                    url: '{{ url('admin/product/attribute-value-html') }}'+'?for=edit&key='+'{{ $data['primary_key'] }}',
+                    url: '{{ route($base_route.'.attribute-value-html') }}'+'?for=edit&key='+'{{ $data['primary_key'] }}',
                 @endif
                 error: function (request, status, error) {
                     //console.log(request.responseText);
