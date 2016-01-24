@@ -2,14 +2,16 @@
 
 namespace Neptrox\ProductBasket\Http\Controllers\Frontend\Shopping;
 
-use App\Http\Controllers\Frontend\Shopping\ProductController;
+use App\Http\Controllers\Frontend\Shopping\ProductBaseController;
 use App\Http\Requests;
 use AppHelper;
 use Neptrox\ProductBasket\Models\ProductBasket;
-use Neptrox\ProductBasket\Models\ProductBasketData;
 
-class ProductBasketController extends ProductController
+class ProductBasketController extends ProductBaseController
 {
+    protected $model;
+    protected $productBasketData;
+    protected $config_file_name;
     protected $view_path = 'neptrox-product-basket::frontend.shopping.product';
 
     protected $trans_path;
@@ -18,33 +20,32 @@ class ProductBasketController extends ProductController
     {
         parent:: __construct();
 
+        $this->config_file_name = config('neptrox.product-basket-config');
+        $this->model = config($this->config_file_name.'.model.path.ProductBasket');
+        $this->productBasketData = config($this->config_file_name.'.model.path.ProductBasketData');
         // Generate Translation Dir path
         $this->trans_path = AppHelper::getTransPathFromViewPath($this->view_path);
     }
 
     public function productAction($url)
     {
-        $this->activeProductExistByLang('slug', $url);
+        parent::activeProductExistByLang('slug', $url);
 
-        // Parent Category List
         $category_list = parent::getActiveCategoryList();
-
-        // Special Products
         $special_products = parent::getSpecialProducts();
 
-        $product = ProductBasket::ByDefaultLang()
+        $productModel = $this->model;
+        $product = $productModel::ByDefaultLang()
             ->where('slug', $url)
             ->first();
 
-        $productData = ProductBasketData::where('product_id', $product->primary_key)->first();
+        $productDataModel = $this->productBasketData;
+        $productData = $productDataModel::where('product_id', $product->primary_key)->first();
+        parent::incrementProductViewCount($productData);
 
-        $this->incrementProductViewCount($productData);
-
+        $attribute_values = parent::getProductAttributes($product->primary_key);
+        $productImages = parent::getProductImageGallery($product->primary_key);
         $productList = $this->getProductsOnBasket($productData->custom_field);
-
-        $attribute_values = $this->getProductAttributes($product->primary_key);
-
-        $productImages = $this->getProductImageGallery($product->primary_key);
 
         return view($this->loadDefaultVars($this->view_path . '.product', $product), compact('category_list', 'special_products', 'product', 'productData', 'productList', 'attribute_values', 'productImages', 'productReviews'))->with([
             'product_view_path' => 'frontend.shopping.product'
@@ -58,7 +59,8 @@ class ProductBasketController extends ProductController
             return [];
 
         $product_pks = explode(',', $data['products_on_basket']);
-        $data = ProductBasket::select('ec_product.primary_key', 'ec_product.name', 'ec_product.slug', 'epd.price', 'epd.quantity', 'epd.image', 'ept.url as product_type')
+        $productModel = $this->model;
+        $data = $productModel::select('ec_product.primary_key', 'ec_product.name', 'ec_product.slug', 'epd.price', 'epd.quantity', 'epd.image', 'ept.url as product_type')
             ->leftJoin('ec_product_data as epd', 'ec_product.primary_key', '=', 'epd.product_id')
             ->leftJoin('ec_product_type as ept', 'epd.product_type_id', '=', 'ept.id')
             ->whereIn('ec_product.primary_key', $product_pks)
