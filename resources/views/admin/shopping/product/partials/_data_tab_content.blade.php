@@ -1,3 +1,41 @@
+<style>
+    .select2-container--default .select2-selection--multiple .select2-selection__choice{
+        float: left;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 1px 8px 1px 8px;
+        margin: 4px 0 3px 5px;
+        position: relative;
+        line-height: 18px;
+        color: #fff;
+        cursor: default;
+        border: 1px solid #2a6395;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: #3276b1;
+        border-radius: 0;
+    }
+    .select2-selection__choice__remove{
+        float: right;
+        background: #fff;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        line-height: 12px;
+        color: #3276B1 !important;
+        margin: 3px 5px;
+    }
+    .select2-container--default .select2-selection--multiple{
+        border-radius: 0;
+    }
+</style>
 <fieldset style="border: 1px solid #ddd;">
 
     @if(isset($data['product_data_id_field']))
@@ -16,24 +54,6 @@
         {{ ViewHelper::showValidationError($errors, 'parent_category') }}
     </section>
 
-    <section>
-        <label class="label">{{ trans($trans_path . 'general.columns.image') }}</label>
-        <label class="input">
-            @if(isset($data['image']))
-                <img src="{{ asset($image_path . $data['image']) }}" class="img-responsive" alt="img">
-            @else
-                <img src="{{ asset(config('neptrox.asset_path.admin.smart').'img/default.jpg') }}" class="img-responsive" alt="img">
-            @endif
-        </label>
-    </section>
-
-    <section>
-        {!! Form::label('file', trans($trans_path . 'general.columns.image'), ['class' => 'label'] ) !!}
-        <label class="input">
-            {!! Form::file('file', null, ['class' => 'input-xs', 'id' => 'files']) !!}
-        </label>
-        {{ ViewHelper::showValidationError($errors, 'file') }}
-    </section>
 
     <section style="display: none;">
         {!! Form::label('related_products', trans($trans_path . 'general.columns.related_products'), ['class' => 'label'] ) !!}

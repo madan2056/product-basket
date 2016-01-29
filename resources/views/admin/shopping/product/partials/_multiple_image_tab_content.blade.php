@@ -1,4 +1,30 @@
 <fieldset style="border: 1px solid #ddd;">
+
+    <section>
+        <label class="label">{{ trans($trans_path . 'general.columns.primary-image') }}</label>
+        <label class="input">
+            @if(isset($data['image']))
+                <img src="{{ asset($image_path . $data['image']) }}" class="img-responsive" alt="img">
+            @else
+                <img src="{{ asset(config('neptrox.asset_path.admin.smart').'img/default.jpg') }}" class="img-responsive" alt="img">
+            @endif
+        </label>
+    </section>
+
+    <section>
+        {!! Form::label('file', trans($trans_path . 'general.columns.primary-image'), ['class' => 'label'] ) !!}
+        <label class="input">
+            {!! Form::file('file', null, ['class' => 'input-xs', 'id' => 'files']) !!}
+        </label>
+        {{ ViewHelper::showValidationError($errors, 'file') }}
+    </section>
+
+
+    <section>
+        <hr />
+    </section>
+
+
     <section id="multiple-image-section">
 
     </section>
