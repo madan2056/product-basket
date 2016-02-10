@@ -59,7 +59,7 @@
 
             e.preventDefault();
 
-            var url = '{{ route('admin.product') }}';
+            var url = '{{ route('admin.product-basket') }}';
             var product_id_from = $('#product_id_from').val();
             var product_id_to = $('#product_id_to').val();
             var product_name = $('#product_name').val();
