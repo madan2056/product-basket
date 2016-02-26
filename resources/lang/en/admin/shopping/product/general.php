@@ -73,7 +73,7 @@ return [
         'url-note'                  => '<strong>Note:</strong> Do not use spaces, instead replace spaces with - and make sure the keyword is globally unique.',
         'is-perishable'             =>  'Is Perishable',
         'sort-order'                =>  'Sort Order',
-        'sort-order-note'           => '<strong>Note:</strong> Number 0-999',
+        'sort-order-note'           => '<strong>Note:</strong> Number 0-127',
         'choose_category'           =>  'Choose Category',
         'is_parent'                 =>  '--- Is Parent ---',
         'choose_filters'            =>  'Filters',

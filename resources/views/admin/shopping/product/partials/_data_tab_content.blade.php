@@ -136,7 +136,7 @@
     <section>
         {!! Form::label('sort_order', trans($trans_path . 'general.columns.sort-order'), ['class' => 'label'] ) !!}
         <label class="input">
-            {!! Form::number('sort_order', ViewHelper::getValue('sort_order', isset($data['sort_order'])?$data['sort_order']:''), ['class' => 'input', 'min' => 0, 'max' => 999, 'required' => 'required']) !!}
+            {!! Form::input('sort_order', ViewHelper::getValue('sort_order', isset($data['sort_order'])?$data['sort_order']:''), ['class' => 'input']) !!}
         </label>
         {{ ViewHelper::showValidationError($errors, 'sort_order') }}
         <div class="note">
