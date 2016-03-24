@@ -353,7 +353,8 @@ class ProductBasketController extends ProductBaseController
         }
 
         $productModel = $this->model;
-        $productData = $productModel::where('product_id', $pk)->first();
+        $productDataModel = $this->productBasketData;
+        $productData = $productDataModel::where('product_id', $pk)->first();
 
         // Remove Main Product Image
         if ($productData->image) {
