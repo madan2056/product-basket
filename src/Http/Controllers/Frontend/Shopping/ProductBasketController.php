@@ -48,8 +48,8 @@ class ProductBasketController extends ProductBaseController
         $productList = $this->getProductsOnBasket($productData->custom_field);
 
         return view($this->loadDefaultVars($this->view_path . '.product', $product), compact('category_list', 'special_products', 'product', 'productData', 'productList', 'attribute_values', 'productImages', 'productReviews'))->with([
-            'product_view_path' => 'frontend.shopping.product'
-        ]);
+        'product_view_path' => 'frontend.shopping.product'
+    ]);
     }
 
     protected function getProductsOnBasket($custom_field)

@@ -14,7 +14,7 @@
     </div>
     <div class="rgt-content" id="cart-list-wrapper">
 
-        @if($productList->count() > 0)
+        @if(count($productList) > 0)
             @foreach($productList as $item)
                 <div class="rgt-row row row-8">
                     <div class="col-sm-2">
@@ -47,6 +47,16 @@
                     </div>
                 </div>
             @endforeach
+        @else
+            <div class="rgt-row row row-8">
+                <div class="col-sm-3">
+                    <div class="clearfix ct-item">
+                        <div class="cl-right">
+                            <p>No data found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         @endif
 
 
