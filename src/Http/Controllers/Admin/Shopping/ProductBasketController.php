@@ -30,6 +30,7 @@ class ProductBasketController extends ProductBaseController
     protected $product_type_url = 'product-basket';
     protected $config_file_name;
     protected $productBasketData;
+    protected $admin_pagination_limit = 200;
 
     protected $search_query = [];
 

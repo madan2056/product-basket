@@ -1,4 +1,4 @@
-<table class="table table-striped table-bordered table-hover hidden-mob" id="product_index_search" width="100%" style="{!! (!request()->has('product-status'))?"display: none;":'' !!}" >
+<table class="table table-striped table-bordered table-hover hidden-mob" id="product_index_search" width="100%" >
     <thead>
     <tr class="col-md-12">
         <th data-class="expand" class="col-md-2 custom-col">
@@ -15,8 +15,8 @@
                    class="custom-form col-md-10 topgap">
             <label for="product_status" class="col-md-2 custom-col topgap">{{ trans($trans_path.'general.columns.status') }} </label>
             <select name="product_status" id="product_status" class="custom-form col-md-10 topgap">
-                <option value="1">Active</option>
-                <option value="0">In-Active</option>
+                <option value="1" {{ request('product-status') == 1?'selected="selected"':'' }}>Active</option>
+                <option value="0" {{ request()->has('product-status') && request('product-status') == 0?'selected="selected"':'' }}>In-Active</option>
             </select>
         </th>
         <th data-class="expand" class="col-md-2 custom-col">
