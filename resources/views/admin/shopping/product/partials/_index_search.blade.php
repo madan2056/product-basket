@@ -15,8 +15,9 @@
                    class="custom-form col-md-10 topgap">
             <label for="product_status" class="col-md-2 custom-col topgap">{{ trans($trans_path.'general.columns.status') }} </label>
             <select name="product_status" id="product_status" class="custom-form col-md-10 topgap">
-                <option value="1" {{ request('product-status') == 1?'selected="selected"':'' }}>Active</option>
-                <option value="0" {{ request()->has('product-status') && request('product-status') == 0?'selected="selected"':'' }}>In-Active</option>
+                <option value="all" {{ !request()->has('product-status') || request('product-status') == 'all'?'selected="selected"':'' }}>All</option>
+                <option value="active" {{ request()->has('product-status') && request('product-status') == 'active'?'selected="selected"':'' }}>Active</option>
+                <option value="inactive" {{ request()->has('product-status') && request('product-status') == 'inactive'?'selected="selected"':'' }}>In-Active</option>
             </select>
         </th>
         <th data-class="expand" class="col-md-2 custom-col">

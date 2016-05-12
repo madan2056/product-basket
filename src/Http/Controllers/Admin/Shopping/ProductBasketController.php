@@ -84,7 +84,10 @@ class ProductBasketController extends ProductBaseController
         }
 
         if ($request->has('product-status')) {
-            $query->where('pd.status', (int) $request->get('product-status'));
+
+            if (in_array($request->get('product-status'), ['active', 'inactive']))
+                $query->where('pd.status', $request->get('product-status') == 'active'?1:0);
+
             $this->search_query['product-status'] = $request->get('product-status');
         }
 
